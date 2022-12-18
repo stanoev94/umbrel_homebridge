@@ -1,0 +1,5 @@
+#!/command/with-contenv sh
+
+[ -e /homebridge/homebridge.log ] || touch /homebridge/homebridge.log
+
+exec tail -f --follow=name /homebridge/homebridge.log
