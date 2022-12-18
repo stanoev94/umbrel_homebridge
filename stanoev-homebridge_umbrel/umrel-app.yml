@@ -1,5 +1,5 @@
 manifestVersion: 10
-id: homebridge_umbrel
+id: stanoev-homebridge_umbrel
 name: Homebridge
 tagline: homebridge
 icon: https://raw.githubusercontent.com/homebridge/branding/master/logos/homebridge-color-round-stylized.png
