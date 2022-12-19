@@ -1,13 +1,28 @@
-version: '2'
+   # version: '2'
+   # services:
+   # homebridge:
+   # image: oznu/homebridge:latest
+   # restart: always
+   # network_mode: host
+   # volumes:
+   #   - ./volumes/homebridge:/homebridge
+   # logging:
+   #  driver: json-file
+   #   options:
+   #      max-size: "10mb"
+   #       max-file: "1"
+
+#version: "3.7"
+
 services:
-  homebridge:
+
+  app_proxy:
+    environment:
+      # The format here is: <app-id>_<docker-service-name>_1
+      APP_HOST: stanoev-homebridge_umbrel
+      APP_PORT: 8585
+    
+  server:
     image: oznu/homebridge:latest
-    restart: always
-    network_mode: host
-    volumes:
-      - ./volumes/homebridge:/homebridge
-    logging:
-      driver: json-file
-      options:
-        max-size: "10mb"
-        max-file: "1"
+    user: "1000:1000"
+    init: true
